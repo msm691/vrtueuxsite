@@ -1,12 +1,14 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+// vite.config.ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
-  base: '/Vrtueux/',
+  // GitHub Pages sous /<user>/<repo>/ => base = '/vrtueuxsite/'
+  base: '/vrtueuxsite/',
   plugins: [react()],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -59,9 +61,10 @@ export default defineConfig({
   build: {
     target: 'esnext',
     outDir: 'dist',
+    emptyOutDir: true,
   },
   server: {
     port: 3000,
     open: true,
   },
-});
+})

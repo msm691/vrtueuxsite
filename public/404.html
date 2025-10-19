@@ -1,0 +1,9 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><title>Redirect</title>
+<script>
+  // Redirige toute URL vers index.html pour les routes client
+  var u = new URL(window.location.href);
+  var p = u.pathname.replace(/\/404\.html$/, '/');
+  window.location.replace(p + u.search + u.hash);
+</script>
+</head><body></body></html>
